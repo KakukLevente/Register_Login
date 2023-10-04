@@ -162,8 +162,23 @@ header::before{
         transition: .3s ease;
         
     }
+    .navigation button{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
 
     #check:checked~.navigation a{
+        transform: translate(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    #check:checked~.navigation button{
         transform: translate(0);
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
