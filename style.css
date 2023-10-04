@@ -30,11 +30,24 @@ header{
     z-index: 99;
 }
 
+header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
 .logo{
     font-size: 2em;
     color: #fff;
     user-select: none;
 }
+
 
 .navigation a {
     position: relative;
@@ -80,6 +93,81 @@ header{
 .navigation .btnLogin-popup:hover{
     background: #fff;
     color: #162938;
+}
+
+#check{
+    display: none;
+}
+
+.hamburger{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/*TÖRÉSPONTOK*/
+@media (max-width: 992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .hamburger{
+        display: inline-flex;
+    }
+
+    #check:checked~.hamburger #menu-icon{
+        display: none;
+    }
+
+    .hamburger #close-icon{
+        display: none;
+    }
+
+    #check:checked~.hamburger #close-icon{
+        display: block;
+    }
+
+    .navigation{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgb(0, 0, 0, .1);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navigation{
+        height: 17.7rem;
+    }
+
+    .navigation a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+        
+    }
+
+    #check:checked~.navigation a{
+        transform: translate(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
 }
 
 .wrapper{
@@ -255,3 +343,4 @@ header{
 .login-register p a:hover{
     text-decoration: underline;
 }
+
