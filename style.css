@@ -48,7 +48,6 @@ header::before{
     user-select: none;
 }
 
-
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -183,7 +182,15 @@ header::before{
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
     }
+
+    .navigation .btnLogin-popup{
+        text-align: center;
+        display: block;
+        margin: 10px auto;
+    }
 }
+
+
 
 .wrapper{
     position: relative;
@@ -358,4 +365,3 @@ header::before{
 .login-register p a:hover{
     text-decoration: underline;
 }
-
