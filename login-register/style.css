@@ -217,19 +217,31 @@ header::before{
     height: 520px;
 }
 
+.wrapper.active2{
+    height: 520px;
+}
+
 .wrapper .form-box{
     width: 100%;
     padding: 40px;
 }
 
+
+
 .wrapper .form-box.login{
+    
     transition: transform .18s ease;
     transform: translateX(0);
 }
 
 .wrapper.active .form-box.login{
-    position: absolute;
+    position: none;
     transform: translateX(-400px);
+}
+
+.wrapper.active2 .form-box.login{
+    position: none;
+    transform: translateX(400px);
 }
 
 .wrapper .form-box.register{
@@ -239,6 +251,17 @@ header::before{
 }
 
 .wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .form-box.forgot-password{
+    position: absolute;
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper.active2 .form-box.forgot-password{
     transition: transform .18s ease;
     transform: translateX(0);
 }
@@ -365,3 +388,6 @@ header::before{
 .login-register p a:hover{
     text-decoration: underline;
 }
+
+
+  
